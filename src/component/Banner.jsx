@@ -72,11 +72,11 @@ const Banner = () => {
 
   return (
     <div className="bg-primary-bg ">
-      <Container className="z-10 py-9 md:pt-16 xl:pt-[6.4375rem] px-10 xl:px-[4.375rem] flex flex-col rounded-3xl mx-6 sm:mx-auto mb-28 md:mb-0 ">
+      <Container className="z-10 py-9 md:pt-16 xl:pt-[6.4375rem] px-6 xl:px-[4.375rem] flex flex-col rounded-3xl  sm:mx-auto mb-28 md:mb-0 ">
         <div className="smallSpace h-64 md:hidden "></div>
-        <div className="absolute h-full w-full top-0 left-0 -z-20">
+        <div className="absolute p-3 h-full w-full top-0 left-0 -z-20">
           <img
-            className={`h-full w-full object-cover rounded-3xl transition-opacity duration-500 ${
+            className={`h-full w-full   object-cover rounded-3xl transition-opacity duration-500 ${
               fade ? "opacity-100" : "opacity-0"
             }`}
             src={games[active].banner}
@@ -106,7 +106,10 @@ const Banner = () => {
             }`}
           >
             <div className="from flex gap-x-2.5 items-baseline">
-              From <del className="text-xl md:text-[1.75rem]">${games[active].from}</del>
+              From{" "}
+              <del className="text-xl md:text-[1.75rem]">
+                ${games[active].from}
+              </del>
             </div>
             <div className="to flex gap-x-1.5 items-baseline">
               to{" "}
@@ -130,7 +133,7 @@ const Banner = () => {
           </div>
         </div>
         <div className="bottom w-full  md:h-60 xl:h-80 md:my-5">
-          <div className="absolute w-full pt-7 md:pt-0 md:h-1/2 top-full left-0 md:top-1/2 flex items-center justify-between px-0 sm:px-10 xl:px-20">
+          <div className="absolute w-full pt-7 md:pt-0 md:h-1/2 top-full left-0 md:top-1/2 flex items-center justify-between px-6 sm:px-10 xl:px-20">
             <ul className="flex gap-x-3 sm:gap-x-6 md:gap-x-9 h-24 md:h-auto items-baseline ">
               {games.map((game, index) => (
                 <li

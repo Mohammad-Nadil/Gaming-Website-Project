@@ -31,6 +31,13 @@ const ReviewSlider = ({ items }) => {
       {
         breakpoint: 770,
         settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 740,
+        settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
