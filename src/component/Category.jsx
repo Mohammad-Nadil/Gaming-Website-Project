@@ -61,7 +61,7 @@ const Category = () => {
               onClick={() => handleClick(index)}
             />
           ))}
-          <div className="w-0.5 h-11 bg-primary"></div>
+          <div className=" hidden sm:flex w-0.5 h-11 bg-primary"></div>
           {links2.map((item, index) => (
             <Li
               key={index + links.length}

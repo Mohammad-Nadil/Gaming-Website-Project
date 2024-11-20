@@ -71,8 +71,8 @@ const Banner = () => {
   }, [games.length]);
 
   return (
-    <div className="bg-primary-bg">
-      <Container className="z-10 py-9 md:pt-16 xl:pt-[6.4375rem] px-10 xl:px-[4.375rem] flex flex-col rounded-3xl mx-6">
+    <div className="bg-primary-bg ">
+      <Container className="z-10 py-9 md:pt-16 xl:pt-[6.4375rem] px-10 xl:px-[4.375rem] flex flex-col rounded-3xl mx-6 sm:mx-auto mb-28 md:mb-0 ">
         <div className="smallSpace h-64 md:hidden "></div>
         <div className="absolute h-full w-full top-0 left-0 -z-20">
           <img
@@ -84,7 +84,7 @@ const Banner = () => {
           />
         </div>
         <div className="top flex flex-col gap-y-2 md:gap-y-4">
-          <div className="icon text-2xl md:text-3xl text-primary flex gap-x-7">
+          <div className="icon text-2xl md:text-3xl text-primary flex gap-x-4 md:gap-x-7">
             <FaPlaystation />
             <FaXbox />
             <div className="w-0.5 h-7 items-center bg-primary"></div>
@@ -130,16 +130,16 @@ const Banner = () => {
           </div>
         </div>
         <div className="bottom w-full  md:h-60 xl:h-80 md:my-5">
-          <div className="absolute w-full pt-7 md:pt-0 md:h-1/2 top-full left-0 md:top-1/2 flex items-center sm:px-20">
-            <ul className="flex gap-x-6 md:gap-x-9 h-24 md:h-auto items-baseline">
+          <div className="absolute w-full pt-7 md:pt-0 md:h-1/2 top-full left-0 md:top-1/2 flex items-center justify-between px-0 sm:px-10 xl:px-20">
+            <ul className="flex gap-x-3 sm:gap-x-6 md:gap-x-9 h-24 md:h-auto items-baseline ">
               {games.map((game, index) => (
                 <li
                   key={index}
                   onClick={() => setActive(index)}
                   className={`icon border border-primary rounded-2xl duration-300 ease-in-out ${
                     active === index
-                      ? "w-24 h-24 md:w-28 md:h-28 xl:w-36 xl:h-36 scale-110 opacity-100"
-                      : "w-16 h-16 md:w-20 md:h-20 xl:w-28 xl:h-28 opacity-60"
+                      ? "w-20 h-20 md:w-28 md:h-28 xl:w-36 xl:h-36 scale-110 opacity-100"
+                      : "w-14 h-14 md:w-20 md:h-20 xl:w-28 xl:h-28 opacity-60"
                   }`}
                 >
                   <img
