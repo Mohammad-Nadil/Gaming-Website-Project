@@ -11,7 +11,7 @@ const Li = ({ href, icon, isActive, onClick , className }) => {
   return (
     <li
       onClick={onClick}
-      className={`border duration-300 rounded-lg border-primary-bg hover:border-[#57595D] ${className}`}
+      className={`border border-[#57595D] duration-300 rounded-lg sm:border-primary-bg hover:border-[#57595D] ${className}`}
     >
       <Link to={href}>
         <p
@@ -51,7 +51,7 @@ const Category = () => {
   return (
     <div className="bg-primary-bg">
       <Container>
-        <ul className="text-primary text-2xl  md:text-[43px] flex justify-between py-6 items-center overflow-x-auto scrollbar-hide ">
+        <ul className="text-primary text-2xl  md:text-[43px] flex justify-between py-6 items-center overflow-x-auto scrollbar-hide gap-x-4 sm:gap-x-0 ">
           {links.map((item, index) => (
             <Li
               key={index}

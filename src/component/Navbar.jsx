@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-primary-bg">
-      <Container className="flex justify-between items-center sm:gap-x-11 2xl:gap-x-44 py-6 lg:py-12">
+      <Container className="flex justify-between items-center sm:gap-x-11 2xl:gap-x-44 py-6 lg:py-12 border-b border-white/10">
         <div className="logo">
           <div className="smallMenu hidden"></div>
           <div className="img w-32 lg:w-[13.375rem] aspect-[5/1]">
