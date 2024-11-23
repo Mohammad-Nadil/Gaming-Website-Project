@@ -139,14 +139,14 @@ const Banner = () => {
                 <li
                   key={index}
                   onClick={() => setActive(index)}
-                  className={`icon border border-primary rounded-2xl duration-300 ease-in-out ${
+                  className={`icon border border-primary rounded-xl sm:rounded-2xl duration-300 ease-in-out ${
                     active === index
                       ? "w-20 h-20 md:w-28 md:h-28 xl:w-36 xl:h-36 scale-110 opacity-100"
                       : "w-14 h-14 md:w-20 md:h-20 xl:w-28 xl:h-28 opacity-60"
                   }`}
                 >
                   <img
-                    className="h-full w-full object-cover border border-transparent"
+                    className="h-full w-full object-cover border border-transparent rounded-xl sm:rounded-2xl"
                     src={game.icon}
                     alt={game.name}
                   />

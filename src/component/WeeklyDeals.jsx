@@ -3,7 +3,6 @@ import Container from "./layer/Container";
 import ProductCard from "./layer/ProductCard";
 import line from "../assets/lineHorizontal.png";
 import CustomBtn from "./layer/CustomBtn";
-import WeeklySlider from "./layer/WeeklySlider";
 import seikro from "../assets/seikro.png";
 import ghost from "../assets/ghostRunner.png";
 import forza from "../assets/forza.jpg";
@@ -21,8 +20,8 @@ const WeeklyDeals = () => {
     const calculateTimeRemaining = () => {
       const now = new Date();
       const endOfWeek = new Date();
-      endOfWeek.setDate(now.getDate() + ((7 - now.getDay()) % 7)); // Set to Sunday
-      endOfWeek.setHours(23, 59, 59, 999); // Set time to 23:59:59
+      endOfWeek.setDate(now.getDate() + ((7 - now.getDay()) % 7));
+      endOfWeek.setHours(23, 59, 59, 999);
 
       const timeDiff = endOfWeek - now;
 
@@ -46,23 +45,27 @@ const WeeklyDeals = () => {
   let [show, setShow] = useState(4);
 
   useEffect(() => {
-    function widthSize() {
-      if (window.innerWidth >= 1563) {
-        setShow(4);
-      } else if (window.innerWidth >= 1280) {
-        setShow(4);
-      } else if (window.innerWidth >= 1024) {
-        setShow(3);
-      } else if (window.innerWidth >= 768) {
-        setShow(4);
-      } else if (window.innerWidth >= 640) {
-        setShow(4);
-      } else {
-        setShow(4);
+    if (typeof window !== "undefined") {
+      function widthSize() {
+        if (window.innerWidth >= 1536) {
+          setShow(4);
+        } else if (window.innerWidth >= 1280) {
+          setShow(3);
+        } else if (window.innerWidth >= 1024) {
+          setShow(3);
+        } else if (window.innerWidth >= 768) {
+          setShow(4);
+        } else if (window.innerWidth >= 640) {
+          setShow(4);
+        } else {
+          setShow(4);
+        }
       }
+      widthSize();
+      window.addEventListener("resize", widthSize);
+  
+      return () => window.removeEventListener("resize", widthSize); // Cleanup
     }
-    widthSize();
-    window.addEventListener("resize", widthSize);
   }, []);
 
   let items = [
@@ -127,14 +130,16 @@ const WeeklyDeals = () => {
     <div>
       <Container>
         <div className="p-0.5 px-0.5 md:bg-gradient-to-t from-Gr-start to-Gr-end rounded-3xl ">
-          <div className="div h-full w-full bg-primary-bg rounded-3xl px-1 xl:px-12 py-8 xl:pt-14 xl:pb-9 flex flex-col gap-y-9">
+          <div className="div h-full w-full bg-primary-bg rounded-3xl  xl:px-12 py-8 xl:pt-14 xl:pb-9 flex flex-col gap-y-9">
             <div className="top text-white font-openSans flex justify-between items-center px-4 sm:px-8 xl:px-20">
               <div
                 className="head flex items-center
                   gap-x-3 xl:gap-x-6"
               >
                 <div className="heading">
-                  <p className=" sm:text-4xl text-nowrap lg:text-wrap xl:text-nowrap">Weekly Arrivals</p>
+                  <p className=" sm:text-4xl text-nowrap lg:text-wrap xl:text-nowrap">
+                    Weekly Arrivals
+                  </p>
                 </div>
                 <div className="btn hidden lg:flex lg:w-full">
                   <CustomBtn
@@ -174,7 +179,7 @@ const WeeklyDeals = () => {
                 </p>
               </div>
             </div>
-            <div className="bottom grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+            <div className="bottom grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-3 md:gap-5 xl:gap-7 !grid-rows-1 gr">
               {items
                 .filter((data, index) => index < show)
                 .map((item, index) => (
@@ -192,7 +197,7 @@ const WeeklyDeals = () => {
                     nintendoIcon={item.nintendo}
                     userIcon={item.user}
                     productKeyIcon={item.productKey}
-                    className="!bg-none sm:mx-2 my-1"
+                    className="!bg-none "
                     Class=" !bg-[#1E2127]"
                   />
                 ))}

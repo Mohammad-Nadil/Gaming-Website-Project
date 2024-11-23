@@ -59,7 +59,7 @@ const ProductCard = ({
             <p>-{discountPercent}%</p>
           </div>
         </div>
-        <div className="info font-openSans flex flex-col items-center gap-y-2.5 sm:gap-y-3 xl:gap-y-8 ">
+        <div className="info font-openSans flex flex-col items-center gap-y-2 sm:gap-y-3 xl:gap-y-8 h-1/3">
           <div className="details text-sm sm:text-[28px] w-full flex  flex-col gap-y-1 sm:gap-y-3 px-2.5 sm:px-6 ">
             <div className="name text-white  text-nowrap overflow-hidden ">
               {" "}

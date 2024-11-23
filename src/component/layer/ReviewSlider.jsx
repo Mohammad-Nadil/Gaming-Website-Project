@@ -11,41 +11,41 @@ const ReviewSlider = ({ items }) => {
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: "linear",
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1281,
+        breakpoint: 1280,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 770,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 740,
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 736,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 414,
+        settings: {
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
