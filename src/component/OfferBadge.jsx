@@ -21,11 +21,14 @@ const OfferBadge = ({
   nintendo,
   user,
   productKey,
+  className,
 }) => {
   return (
     <div>
-      <Container className="flex flex-col md:flex-row pt-10 md:pt-20 xl:pt-40 gap-x-7 gap-y-5 ">
-        <div className="left w-full lg:w-1/2  ">
+      <Container
+        className={`flex flex-col md:flex-row pt-10 md:pt-20 xl:pt-40 gap-x-7 gap-y-5  ${className}`}
+      >
+        <div className="left w-full max-h-min lg:w-1/2  ">
           <img
             className="h-full w-full object-cover rounded-3xl"
             src={image}
@@ -85,7 +88,7 @@ const OfferBadge = ({
               <div className="btn xl:pt-3">
                 <CustomBtn className="py-1.5 px-2 " href="/">
                   <BiCartAdd className=" text-base xl:text-[33px]" />
-                  <p className=" text-sm xl:text-2xl" >Buy Now</p>
+                  <p className=" text-sm xl:text-2xl">Buy Now</p>
                 </CustomBtn>
               </div>
             </div>

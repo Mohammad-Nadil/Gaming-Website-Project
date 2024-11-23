@@ -5,10 +5,10 @@ import Review from "../Review";
 import WeeklyDeals from "../WeeklyDeals";
 import OfferBadge from "../OfferBadge";
 import forza from "../../assets/forza.jpg";
+import farcry from "../../assets/farCry.jpg";
+import NewArrivals from "../NewArrivals";
 
 const Home = () => {
-
-
   return (
     <div className="overflow-x-hidden">
       <Category />
@@ -28,6 +28,22 @@ const Home = () => {
         nintendo={true}
         user={true}
         productKey={true}
+      />
+      <NewArrivals />
+      <OfferBadge
+        name="FARCRY 6"
+        image={farcry}
+        discount={true}
+        discountPercent="15"
+        price="59.99"
+        priceFrom="50"
+        star={5}
+        playstation={true}
+        xbox={true}
+        nintendo={false}
+        user={true}
+        productKey={true}
+        className=" md:flex-row-reverse"
       />
     </div>
   );
