@@ -8,8 +8,10 @@ import forza from "../../assets/forza.jpg";
 import farcry from "../../assets/farCry.jpg";
 import NewArrivals from "../NewArrivals";
 import ComingSoon from "../ComingSoon";
+import ExtraSection from "../ExtraSection";
 
 const Home = () => {
+
   return (
     <div className="overflow-x-hidden">
       <Category />
@@ -47,6 +49,7 @@ const Home = () => {
         className=" md:flex-row-reverse"
       />
       <ComingSoon/>
+      <ExtraSection/>
     </div>
   );
 };

@@ -33,7 +33,7 @@ const ComingSoon = () => {
             </div>
           </div>
           <div>
-            <ComingSoonSlider/>
+            <ComingSoonSlider />
           </div>
         </div>
       </Container>
