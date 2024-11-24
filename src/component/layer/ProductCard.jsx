@@ -26,18 +26,19 @@ const ProductCard = ({
   userIcon,
   productKeyIcon,
   key,
+  available,
 }) => {
   let [like, setLike] = useState(false);
 
   return (
     <div
       key={key}
-      className={`aspect-[398/520] p-0.5 bg-gradient-to-t from-Gr-start to-Gr-end rounded-xl sm:rounded-3xl ${className}`}
+      className={`aspect-[398/520] p-0.5 bg-gradient-to-t from-Gr-start to-Gr-end rounded-xl sm:rounded-3xl group-[]: ${className}`}
     >
       <div
         className={`bg-primary-bg w-full h-full rounded-xl sm:rounded-3xl ${Class} `}
       >
-        <div className="img aspect-[366/285] w-full p-1 sm:p-4 relative group">
+        <div className="img aspect-[366/285]  w-full p-1 sm:p-4 relative ">
           <img
             className="h-full w-full object-cover rounded-lg sm:rounded-2xl"
             src={image}
@@ -59,31 +60,39 @@ const ProductCard = ({
             <p>-{discountPercent}%</p>
           </div>
         </div>
-        <div className="info font-openSans flex flex-col items-center gap-y-2 sm:gap-y-3 xl:gap-y-8 h-1/3">
+        <div className="info font-openSans flex flex-col items-center justify-between gap-y-2 sm:gap-y-3 !w-full 2xl:gap-y-8 h-1/3 overflow-hidden">
           <div className="details text-sm sm:text-[28px] w-full flex  flex-col gap-y-1 sm:gap-y-3 px-2.5 sm:px-6 ">
-            <div className="name text-white  text-nowrap overflow-hidden ">
+            <div className="name text-white  text-nowrap w-full ">
               {" "}
               {name.length > 18 ? name.substring(0, 18) + "..." : name}
             </div>
-            <div className="priceRating flex justify-between text-[11px] sm:text-2xl items-baseline">
-              <div className="price text-Gr-end flex gap-x-1 sm:gap-x-2.5">
-                {discount && (
-                  <span className=" text-[9px] leading-[10px]  sm:text-lg text-primary flex flex-col">
-                    From <del>${from} to</del>
-                  </span>
-                )}
-                ${price}
+            {available ? (
+              <div className="priceRating flex justify-between text-[11px] sm:text-2xl items-baseline">
+                <div className="price  text-Gr-end flex gap-x-1 sm:gap-x-2.5">
+                  {discount && (
+                    <span className=" text-[9px] 2xl:leading-[10px]  sm:text-lg text-primary flex flex-col">
+                      From <del>${from} to</del>
+                    </span>
+                  )}
+                  ${price}
+                </div>
+                <div className="rating text-Gr-start text-[9px] sm:text-base  flex sm:gap-x-0.5 ">
+                  {Array(star)
+                    .fill(0)
+                    .map((_, index) => (
+                      <IoMdStar key={index} />
+                    ))}
+                </div>
               </div>
-              <div className="rating text-Gr-start text-[9px] sm:text-base  flex sm:gap-x-0.5 ">
-                {Array(star)
-                  .fill(0)
-                  .map((_, index) => (
-                    <IoMdStar key={index} />
-                  ))}
+            ) : (
+              <div className="">
+                <p className="font-openSans text-sm sm:text-2xl sm:py-3= 2xl:text-3xl text-[#E614FC]">
+                  Release date 2024
+                </p>
               </div>
-            </div>
+            )}
           </div>
-          <div className="icon text-sm sm:text-[2.0625rem] text-primary flex  gap-2 sm:gap-x-4 xl:gap-x-7">
+          <div className="icon text-sm sm:text-[2.0625rem] text-primary flex  gap-2 sm:gap-x-4 2xl:gap-x-7 w-full justify-center ">
             {playstationIcon && <FaPlaystation />}
             {xboxIcon && <FaXbox />}
             {nintendoIcon && <BsNintendoSwitch />}

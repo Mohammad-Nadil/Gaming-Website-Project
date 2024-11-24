@@ -7,6 +7,7 @@ import OfferBadge from "../OfferBadge";
 import forza from "../../assets/forza.jpg";
 import farcry from "../../assets/farCry.jpg";
 import NewArrivals from "../NewArrivals";
+import ComingSoon from "../ComingSoon";
 
 const Home = () => {
   return (
@@ -45,6 +46,7 @@ const Home = () => {
         productKey={true}
         className=" md:flex-row-reverse"
       />
+      <ComingSoon/>
     </div>
   );
 };

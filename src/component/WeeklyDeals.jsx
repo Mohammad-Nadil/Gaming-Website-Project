@@ -50,7 +50,7 @@ const WeeklyDeals = () => {
         if (window.innerWidth >= 1536) {
           setShow(4);
         } else if (window.innerWidth >= 1280) {
-          setShow(3);
+          setShow(4);
         } else if (window.innerWidth >= 1024) {
           setShow(3);
         } else if (window.innerWidth >= 768) {
@@ -82,6 +82,7 @@ const WeeklyDeals = () => {
       nintendo: true,
       user: true,
       productKey: true,
+      available:true
     },
     {
       name: "Ghost Runner",
@@ -96,6 +97,7 @@ const WeeklyDeals = () => {
       nintendo: false,
       user: true,
       productKey: false,
+      available:true
     },
     {
       name: "Forza Horizon 6",
@@ -110,6 +112,7 @@ const WeeklyDeals = () => {
       nintendo: true,
       user: true,
       productKey: true,
+      available:true
     },
     {
       name: "Farcry 6",
@@ -124,13 +127,14 @@ const WeeklyDeals = () => {
       nintendo: true,
       user: true,
       productKey: false,
+      available:true
     },
   ];
   return (
     <div>
-      <Container className="pt-10 md:pt-20 xl:pt-40">
+      <Container className="pt-10 md:pt-20 xl:pt-40 ">
         <div className="p-0.5 px-0.5 md:bg-gradient-to-t from-Gr-start to-Gr-end rounded-3xl ">
-          <div className="div h-full w-full bg-primary-bg rounded-3xl  xl:px-12 py-8 xl:pt-14 xl:pb-9 flex flex-col gap-y-9">
+          <div className="div h-full w-full bg-primary-bg rounded-3xl   px-3 2xl:px-12 py-8 xl:pt-14 xl:pb-9 flex flex-col gap-y-9">
             <div className="top text-white font-openSans flex justify-between items-center px-4 sm:px-8 xl:px-20">
               <div
                 className="head flex items-center
@@ -179,7 +183,7 @@ const WeeklyDeals = () => {
                 </p>
               </div>
             </div>
-            <div className="bottom grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-3 md:gap-5 xl:gap-7 !grid-rows-1 gr">
+            <div className="bottom grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 2xl:gap-7 !grid-rows-1 gr">
               {items
                 .filter((data, index) => index < show)
                 .map((item, index) => (
@@ -197,6 +201,7 @@ const WeeklyDeals = () => {
                     nintendoIcon={item.nintendo}
                     userIcon={item.user}
                     productKeyIcon={item.productKey}
+                    available={item.available}
                     className="!bg-none "
                     Class=" !bg-[#1E2127]"
                   />

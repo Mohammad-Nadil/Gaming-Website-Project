@@ -5,12 +5,37 @@ import forza from "../../assets/forza.jpg";
 import seikro from "../../assets/seikro.png";
 import ghost from "../../assets/ghostRunner.png";
 import farcry from "../../assets/farCry.png";
+import { FaAngleLeft } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa6";
 
-const NewArrivalsSlider = () => {
+function SampleNextArrow(props) {
+  const { onClick } = props;
+  return (
+    <div
+      className="border  absolute top-1/2 -translate-y-1/2 left-full text-white text-2xl h-14 w-14 rounded-full grid place-content-center duration-300 hover:text-primary-bg hover:bg-white -translate-x-full 2xl:translate-x-1/2 "
+      onClick={onClick}
+    >
+      <FaAngleRight />
+    </div>
+  );
+}
 
+function SamplePrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <div
+      className="border e absolute top-1/2 -translate-y-1/2 right-full text-white text-2xl z-50  h-14 w-14 rounded-full grid translate-x-full 2xl:-translate-x-1/2 place-content-center duration-300 hover:text-primary-bg hover:bg-white "
+      onClick={onClick}
+    >
+      <FaAngleLeft />
+    </div>
+  );
+}
+
+const ComingSoonSlider = () => {
   let items = [
     {
-      name: "Sekiro Shadows Die once",
+      name: "Sekiro Shadows ",
       image: seikro,
       discount: true,
       discountPercent: "25",
@@ -19,10 +44,10 @@ const NewArrivalsSlider = () => {
       star: 5,
       playstation: true,
       xbox: true,
-      nintendo: true,
+      nintendo: false,
       user: true,
       productKey: true,
-      available: true
+      available: false,
     },
     {
       name: "Ghost Runner",
@@ -37,7 +62,7 @@ const NewArrivalsSlider = () => {
       nintendo: false,
       user: true,
       productKey: false,
-      available: true
+      available: false,
     },
     {
       name: "Forza Horizon 6",
@@ -52,7 +77,7 @@ const NewArrivalsSlider = () => {
       nintendo: true,
       user: true,
       productKey: true,
-      available: true
+      available: false,
     },
     {
       name: "Farcry 6",
@@ -67,7 +92,7 @@ const NewArrivalsSlider = () => {
       nintendo: true,
       user: true,
       productKey: false,
-      available: true
+      available: false,
     },
     {
       name: "Farcry 6",
@@ -82,10 +107,10 @@ const NewArrivalsSlider = () => {
       nintendo: true,
       user: true,
       productKey: false,
-      available: true
+      available: false,
     },
     {
-      name: "Sekiro Shadows Die once",
+      name: "Sekiro Shadows ",
       image: seikro,
       discount: true,
       discountPercent: "25",
@@ -97,7 +122,7 @@ const NewArrivalsSlider = () => {
       nintendo: true,
       user: true,
       productKey: true,
-      available: true
+      available: false,
     },
     {
       name: "Ghost Runner",
@@ -112,7 +137,7 @@ const NewArrivalsSlider = () => {
       nintendo: false,
       user: true,
       productKey: false,
-      available: true
+      available: false,
     },
     {
       name: "Forza Horizon 6",
@@ -127,24 +152,26 @@ const NewArrivalsSlider = () => {
       nintendo: true,
       user: true,
       productKey: true,
-      available: true
+      available: false,
     },
   ];
 
   let [active, setActive] = useState(0);
   let settings = {
     dots: false,
-    arrows: false,
+    arrows: true,
     infinite: true,
     autoplay: true,
     speed: 1000,
     autoplaySpeed: 5000,
-    slidesToShow: 4,
+    slidesToShow: 2,
     slidesToScroll: 1,
     initialSlide: 0,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     appendDots: (dots) => (
       <div>
-        <ul className="w-full flex justify-center gap-x-3 py-3"> {dots} </ul>
+        <ul className="!w-full flex justify-center gap-x-3 py-3"> {dots} </ul>
       </div>
     ),
     customPaging: (i) => (
@@ -164,8 +191,7 @@ const NewArrivalsSlider = () => {
         // Tailwind's xl: 1280px
         breakpoint: 1535,
         settings: {
-          dots: true,
-          slidesToShow: 4,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -177,6 +203,7 @@ const NewArrivalsSlider = () => {
           slidesToScroll: 1,
           infinite: true,
           dots: true,
+          arrows: false
         },
       },
       {
@@ -186,6 +213,7 @@ const NewArrivalsSlider = () => {
           dots: true,
           slidesToShow: 2,
           slidesToScroll: 1,
+          arrows: false
         },
       },
       {
@@ -193,6 +221,7 @@ const NewArrivalsSlider = () => {
         breakpoint: 767,
         settings: {
           dots: true,
+          arrows: false,
           slidesToShow: 2,
           slidesToScroll: 1,
         },
@@ -200,11 +229,10 @@ const NewArrivalsSlider = () => {
     ],
   };
 
-
   return (
     <div>
-      <Slider {...settings}>
-        <div className="flex flex-col !gap-y-5">
+      <Slider className="px-3" {...settings}>
+        <div className="!flex !flex-col xl:!flex-row    !h-full ">
           <ProductCard
             name={items[0].name}
             image={items[0].image}
@@ -219,7 +247,7 @@ const NewArrivalsSlider = () => {
             userIcon={items[0].user}
             productKeyIcon={items[0].productKey}
             available={items[0].available}
-            className="mx-1.5 sm:mx-3 lg:mx-3.5 my-2 sm:my-5"
+            className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
             Class=" !bg-[#1E2127] "
           />
           <ProductCard
@@ -236,11 +264,11 @@ const NewArrivalsSlider = () => {
             userIcon={items[1].user}
             productKeyIcon={items[1].productKey}
             available={items[1].available}
-            className="mx-1.5 sm:mx-3 lg:mx-3.5 my-2 sm:my-5"
+            className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
             Class=" !bg-[#1E2127]"
           />
         </div>
-        <div className="flex flex-col !gap-y-5">
+        <div className="!flex !flex-col xl:!flex-row    !h-full ">
           <ProductCard
             name={items[2].name}
             image={items[2].image}
@@ -255,7 +283,7 @@ const NewArrivalsSlider = () => {
             userIcon={items[2].user}
             productKeyIcon={items[2].productKey}
             available={items[2].available}
-            className="mx-1.5 sm:mx-3 lg:mx-3.5 my-2 sm:my-5"
+            className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
             Class=" !bg-[#1E2127] "
           />
           <ProductCard
@@ -272,11 +300,11 @@ const NewArrivalsSlider = () => {
             userIcon={items[3].user}
             productKeyIcon={items[3].productKey}
             available={items[3].available}
-            className="mx-1.5 sm:mx-3 lg:mx-3.5 my-2 sm:my-5"
+            className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
             Class=" !bg-[#1E2127]"
           />
         </div>
-        <div className="flex flex-col !gap-y-5">
+        <div className="!flex !flex-col xl:!flex-row    !h-full ">
           <ProductCard
             name={items[4].name}
             image={items[4].image}
@@ -291,7 +319,7 @@ const NewArrivalsSlider = () => {
             userIcon={items[4].user}
             productKeyIcon={items[4].productKey}
             available={items[4].available}
-            className="mx-1.5 sm:mx-3 lg:mx-3.5 my-2 sm:my-5"
+            className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
             Class=" !bg-[#1E2127] "
           />
           <ProductCard
@@ -308,11 +336,11 @@ const NewArrivalsSlider = () => {
             userIcon={items[5].user}
             productKeyIcon={items[5].productKey}
             available={items[5].available}
-            className="mx-1.5 sm:mx-3 lg:mx-3.5 my-2 sm:my-5"
+            className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
             Class=" !bg-[#1E2127]"
           />
         </div>
-        <div className="flex flex-col !gap-y-5">
+        <div className="!flex !flex-col xl:!flex-row    !h-full ">
           <ProductCard
             name={items[6].name}
             image={items[6].image}
@@ -327,7 +355,7 @@ const NewArrivalsSlider = () => {
             userIcon={items[6].user}
             productKeyIcon={items[6].productKey}
             available={items[6].available}
-            className="mx-1.5 sm:mx-3 lg:mx-3.5 my-2 sm:my-5"
+            className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
             Class=" !bg-[#1E2127] "
           />
           <ProductCard
@@ -344,7 +372,7 @@ const NewArrivalsSlider = () => {
             userIcon={items[7].user}
             productKeyIcon={items[7].productKey}
             available={items[7].available}
-            className="mx-1.5 sm:mx-3 lg:mx-3.5 my-2 sm:my-5"
+            className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
             Class=" !bg-[#1E2127]"
           />
         </div>
@@ -353,4 +381,4 @@ const NewArrivalsSlider = () => {
   );
 };
 
-export default NewArrivalsSlider;
+export default ComingSoonSlider;
