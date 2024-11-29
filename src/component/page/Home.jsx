@@ -9,6 +9,8 @@ import farcry from "../../assets/farCry.jpg";
 import NewArrivals from "../NewArrivals";
 import ComingSoon from "../ComingSoon";
 import ExtraSection from "../ExtraSection";
+import Blog from "../Blog";
+import Newsletter from "../Newsletter";
 
 const Home = () => {
 
@@ -50,6 +52,8 @@ const Home = () => {
       />
       <ComingSoon/>
       <ExtraSection/>
+      <Blog/>
+      <Newsletter/>
     </div>
   );
 };

@@ -83,7 +83,7 @@ const Banner = () => {
             alt={games[active].banner}
           />
         </div>
-        <div className="top flex flex-col gap-y-2 md:gap-y-4">
+        <div className="top flex flex-col gap-y-2 md:gap-y-4 2xl:px-16">
           <div className="icon text-2xl md:text-3xl text-primary flex gap-x-4 md:gap-x-7">
             <FaPlaystation />
             <FaXbox />

@@ -36,7 +36,7 @@ const ProductCard = ({
       className={`aspect-[398/520] p-0.5 bg-gradient-to-t from-Gr-start to-Gr-end rounded-xl sm:rounded-3xl group-[]: ${className}`}
     >
       <div
-        className={`bg-primary-bg w-full h-full rounded-xl sm:rounded-3xl ${Class} `}
+        className={`bg-primary-bg w-full h-full rounded-xl sm:rounded-3xl ${Class} xl:flex xl:flex-col gap-y-5 xl:gap-y-0 `}
       >
         <div className="img aspect-[366/285]  w-full p-1 sm:p-4 relative ">
           <img
@@ -60,23 +60,23 @@ const ProductCard = ({
             <p>-{discountPercent}%</p>
           </div>
         </div>
-        <div className="info font-openSans flex flex-col items-center justify-between gap-y-2 sm:gap-y-3 !w-full 2xl:gap-y-8 h-1/3 overflow-hidden">
-          <div className="details text-sm sm:text-[28px] w-full flex  flex-col gap-y-1 sm:gap-y-3 px-2.5 sm:px-6 ">
+        <div className="info font-openSans flex flex-col items-center justify-between xl:justify-center  gap-y-1 sm:gap-y-3 xl:gap-y-  !w-full 2xl:gap-y-6 h-1/3 xl:h-auto overflow-hidden">
+          <div className="details text-sm sm:text-[28px] xl:text-2xl 2xl:text-3xl w-full flex  flex-col  sm:gap-y-3 lg:gap-y-2 px-2.5 sm:px-6 !h-2/3 ">
             <div className="name text-white  text-nowrap w-full ">
               {" "}
               {name.length > 18 ? name.substring(0, 18) + "..." : name}
             </div>
             {available ? (
-              <div className="priceRating flex justify-between text-[11px] sm:text-2xl items-baseline">
+              <div className="priceRating flex justify-between text-[11px] sm:text-2xl xl:text-xl 2xl:text-[28px] items-center">
                 <div className="price  text-Gr-end flex gap-x-1 sm:gap-x-2.5">
                   {discount && (
-                    <span className=" text-[9px] 2xl:leading-[10px]  sm:text-lg text-primary flex flex-col">
+                    <span className=" text-[9px] leading-3 2xl:leading-[10px]  sm:text-lg xl:text-sm 2xl:text-lg  text-primary flex flex-col">
                       From <del>${from} to</del>
                     </span>
                   )}
                   ${price}
                 </div>
-                <div className="rating text-Gr-start text-[9px] sm:text-base  flex sm:gap-x-0.5 ">
+                <div className="rating text-Gr-start text-[9px] sm:text-base xl:text-xl 2xl:text-[28px]  flex sm:gap-x-0.5 ">
                   {Array(star)
                     .fill(0)
                     .map((_, index) => (
@@ -86,13 +86,13 @@ const ProductCard = ({
               </div>
             ) : (
               <div className="">
-                <p className="font-openSans text-sm sm:text-2xl sm:py-3= 2xl:text-3xl text-[#E614FC]">
+                <p className="font-openSans text-sm sm:text-2xl sm:py-3 2xl:text-3xl text-[#E614FC]">
                   Release date 2024
                 </p>
               </div>
             )}
           </div>
-          <div className="icon text-sm sm:text-[2.0625rem] text-primary flex  gap-2 sm:gap-x-4 2xl:gap-x-7 w-full justify-center ">
+          <div className="icon text-sm sm:text-[2.0625rem] text-primary flex  gap-2 sm:gap-x-4 2xl:gap-x-7 w-full justify-center  !h-1/3">
             {playstationIcon && <FaPlaystation />}
             {xboxIcon && <FaXbox />}
             {nintendoIcon && <BsNintendoSwitch />}

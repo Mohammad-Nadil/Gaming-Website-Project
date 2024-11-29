@@ -6,12 +6,13 @@ import farcry from "../assets/farCry.png";
 import seikro from "../assets/seikro.png";
 import ghost from "../assets/ghostRunner.png";
 import Slider from "react-slick";
+import games from "../games";
 
 const SpecialOffers = () => {
   let items = [
     {
       name: "Sekiro Shadows ",
-      image: seikro,
+      thumbnail: seikro,
       discount: true,
       discountPercent: "25",
       price: "59.99",
@@ -26,7 +27,7 @@ const SpecialOffers = () => {
     },
     {
       name: "Ghost Runner",
-      image: ghost,
+      thumbnail: ghost,
       discount: true,
       discountPercent: "25",
       price: "79.99",
@@ -41,7 +42,7 @@ const SpecialOffers = () => {
     },
     {
       name: "Forza Horizon 6",
-      image: forza,
+      thumbnail: forza,
       discount: true,
       discountPercent: "25",
       price: "55.99",
@@ -56,7 +57,7 @@ const SpecialOffers = () => {
     },
     {
       name: "Farcry 6",
-      image: farcry,
+      thumbnail: farcry,
       discount: true,
       discountPercent: "25",
       price: "69.99",
@@ -71,7 +72,7 @@ const SpecialOffers = () => {
     },
     {
       name: "Farcry 6",
-      image: farcry,
+      thumbnail: farcry,
       discount: false,
       discountPercent: "25",
       price: "69.99",
@@ -86,7 +87,7 @@ const SpecialOffers = () => {
     },
     {
       name: "Sekiro Shadows ",
-      image: seikro,
+      thumbnail: seikro,
       discount: true,
       discountPercent: "25",
       price: "59.99",
@@ -101,7 +102,7 @@ const SpecialOffers = () => {
     },
     {
       name: "Ghost Runner",
-      image: ghost,
+      thumbnail: ghost,
       discount: true,
       discountPercent: "25",
       price: "79.99",
@@ -116,7 +117,7 @@ const SpecialOffers = () => {
     },
     {
       name: "Forza Horizon 6",
-      image: forza,
+      thumbnail: forza,
       discount: true,
       discountPercent: "25",
       price: "55.99",
@@ -202,7 +203,9 @@ const SpecialOffers = () => {
   return (
     <div className="flex flex-col gap-y-3 sm:gap-y-6 md:gap-y-8 lg:gap-y-3 xl:gap-y-6 2xl:gap-y-11">
       <div className="heading flex justify-between items-center lg:px-5 xl:px-7">
-        <p className=" text-2xl sm:text-4xl lg:text-lg 2xl:text-4xl text-white">Special Offers</p>
+        <p className=" text-2xl sm:text-4xl lg:text-lg 2xl:text-4xl text-white">
+          Special Offers
+        </p>
         <div className="btn ">
           <CustomBtn
             text="Browse All"
@@ -215,7 +218,7 @@ const SpecialOffers = () => {
         <Slider {...settings}>
           <div className="flex flex-col  gap-y-5">
             <SmallCards
-              image={items[0].image}
+              image={items[0].thumbnail}
               name={items[0].name}
               discount={items[0].discount}
               discountPercent={items[0].discountPercent}
@@ -223,7 +226,7 @@ const SpecialOffers = () => {
               price={items[0].price}
             />
             <SmallCards
-              image={items[1].image}
+              image={items[1].thumbnail}
               name={items[1].name}
               discount={items[1].discount}
               discountPercent={items[1].discountPercent}
@@ -231,7 +234,7 @@ const SpecialOffers = () => {
               price={items[1].price}
             />
             <SmallCards
-              image={items[2].image}
+              image={items[2].thumbnail}
               name={items[2].name}
               discount={items[2].discount}
               discountPercent={items[2].discountPercent}
@@ -239,7 +242,7 @@ const SpecialOffers = () => {
               price={items[2].price}
             />{" "}
             <SmallCards
-              image={items[3].image}
+              image={items[3].thumbnail}
               name={items[3].name}
               discount={items[3].discount}
               discountPercent={items[3].discountPercent}
@@ -248,7 +251,7 @@ const SpecialOffers = () => {
               className="hidden lg:flex"
             />
             <SmallCards
-              image={items[5].image}
+              image={items[5].thumbnail}
               name={items[5].name}
               discount={items[5].discount}
               discountPercent={items[5].discountPercent}
@@ -257,7 +260,7 @@ const SpecialOffers = () => {
               className="hidden lg:flex"
             />
             <SmallCards
-              image={items[6].image}
+              image={items[6].thumbnail}
               name={items[6].name}
               discount={items[6].discount}
               discountPercent={items[6].discountPercent}
@@ -268,7 +271,7 @@ const SpecialOffers = () => {
           </div>
           <div className="flex flex-col gap-y-5">
             <SmallCards
-              image={items[3].image}
+              image={items[3].thumbnail}
               name={items[3].name}
               discount={items[3].discount}
               discountPercent={items[3].discountPercent}
@@ -277,7 +280,7 @@ const SpecialOffers = () => {
               className="flex lg:hidden"
             />
             <SmallCards
-              image={items[5].image}
+              image={items[5].thumbnail}
               name={items[5].name}
               discount={items[5].discount}
               discountPercent={items[5].discountPercent}
@@ -286,7 +289,7 @@ const SpecialOffers = () => {
               className="flex lg:hidden"
             />
             <SmallCards
-              image={items[6].image}
+              image={items[6].thumbnail}
               name={items[6].name}
               discount={items[6].discount}
               discountPercent={items[6].discountPercent}
