@@ -132,7 +132,7 @@ const WeeklyDeals = () => {
   ];
   return (
     <div>
-      <Container className="pt-10 md:pt-20 xl:pt-40 ">
+      <Container className="pt-10 md:pt-20 xl:pt-40 max-w-[1763px]">
         <div className="p-0.5 px-0.5 md:bg-gradient-to-t from-Gr-start to-Gr-end rounded-3xl ">
           <div className="div h-full w-full bg-primary-bg rounded-3xl   px-3 2xl:px-12 py-8 xl:pt-14 xl:pb-9 flex flex-col gap-y-9">
             <div className="top text-white font-openSans flex justify-between items-center px-4 sm:px-8 xl:px-20">

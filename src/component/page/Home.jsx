@@ -11,6 +11,7 @@ import ComingSoon from "../ComingSoon";
 import ExtraSection from "../ExtraSection";
 import Blog from "../Blog";
 import Newsletter from "../Newsletter";
+import Footer from "../Footer";
 
 const Home = () => {
 
@@ -54,6 +55,7 @@ const Home = () => {
       <ExtraSection/>
       <Blog/>
       <Newsletter/>
+      <Footer/>
     </div>
   );
 };
