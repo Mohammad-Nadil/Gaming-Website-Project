@@ -23,6 +23,7 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import PaymentImgs from "./layer/PaymentImgs";
 
 const Footer = () => {
   let companyLinks = [
@@ -211,13 +212,7 @@ const Footer = () => {
           </div>
           <div className="bottom flex flex-col items-center gap-y-14 md:gap-y-16 2xl:gap-y-28 sm:px-5 lg:px-0">
             <div className="pay flex gap-2.5 sm:gap-x-4 flex-wrap ">
-              {payOptions.map((item, index) => (
-                <img
-                  className="aspect-[63/43] w-10 lg:w-[63px]"
-                  src={item}
-                  alt={item}
-                />
-              ))}
+             <PaymentImgs/>
             </div>
             <div className="bottomFooter text-sm md:text-xl flex flex-col sm:flex-row gap-y-2 items-baseline justify-between w-full">
               <div className="logo flex sm:hidden ">

@@ -9,12 +9,14 @@ import {
 import Rootlayout from "./component/Rootlayout";
 import Home from "./component/page/Home";
 import Shop from "./component/page/Shop";
+import Cart from "./component/page/Cart";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Rootlayout />}>
       <Route index element={<Home />}></Route>
       <Route path="/shop" element={<Shop/>}></Route>
+      <Route path="/cart" element={<Cart/>}></Route>
     </Route>
   )
 );
