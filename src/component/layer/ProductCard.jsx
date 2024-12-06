@@ -53,7 +53,7 @@ const ProductCard = ({
             {like ? <FaHeart /> : <FaRegHeart />}
           </div>
           <div
-            className={`discount absolute left-0 top-0 translate-y-1/2  translate-x-1/3 py-1 sm:py-2.5 px-2 sm:px-3.5 rounded-full bg-gradient-to-br from-[#FF0000] to-[#FFC700] text-xs sm:text-2xl font-openSans font-semibold text-black z-50 ${
+            className={`discount absolute left-0 top-0 translate-y-1/2  translate-x-1/3 py-1 sm:py-2.5 px-2 sm:px-3.5 rounded-full bg-gradient-to-br from-[#FF0000] to-[#FFC700] text-xs sm:text-2xl font-openSans font-semibold text-black z-30 ${
               discount ? "flex" : "hidden"
             }`}
           >

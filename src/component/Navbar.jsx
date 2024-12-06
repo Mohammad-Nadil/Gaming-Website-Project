@@ -6,9 +6,10 @@ import { FaDollarSign, FaHeart } from "react-icons/fa6";
 import { AiFillDollarCircle } from "react-icons/ai";
 import { HiShoppingBag } from "react-icons/hi";
 import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  let [show , setShow] = useState()
+  let [show, setShow] = useState();
 
   let [search, setSearch] = useState("");
   let manageSearch = (e) => {
@@ -18,13 +19,16 @@ const Navbar = () => {
   return (
     <div className="bg-primary-bg">
       <Container className="flex justify-between items-center sm:gap-x-11 2xl:gap-x-44 py-6 lg:py-12 border-b border-white/10">
-        <div className="logo">
-          <div className="smallMenu hidden"></div>
-          <div className="img w-32 lg:w-[13.375rem] aspect-[5/1]">
-            <img src={logo} alt={logo} className="!w-full !h-full" />
+        <Link to="/">
+          <div className="logo">
+            <div className="img w-32 lg:w-[13.375rem] aspect-[5/1]">
+              <img src={logo} alt={logo} className="!w-full !h-full" />
+            </div>
           </div>
-        </div>
-        <div className={`search text-white w-full sm:relative absolute  left-0 duration-300 sm:opacity-100 sm:visible z-50 top-full ${show ?"opacity-100 visible":" opacity-0 invisible"} `}>
+        </Link>
+        <div
+          className={`search text-white w-full sm:relative absolute  left-0 duration-300 sm:opacity-100 sm:visible z-50 top-full ${show ? "opacity-100 visible" : " opacity-0 invisible"} `}
+        >
           <input
             type="text"
             name="search"
@@ -39,7 +43,10 @@ const Navbar = () => {
           </div>
         </div>
         <div className="btn text-white flex gap-x-3 lg:gap-x-[2.125rem] text-2xl xl:text-4xl">
-          <div onClick={()=>setShow(!show)} className="smallSearch sm:hidden  ">
+          <div
+            onClick={() => setShow(!show)}
+            className="smallSearch sm:hidden  "
+          >
             <IoMdSearch />
           </div>
           <div className="money hidden sm:flex">
@@ -50,7 +57,9 @@ const Navbar = () => {
           </div>
           <div className="cart relative">
             <HiShoppingBag />
-            <p className="absolute right-0 top-0 rounded-full bg-gradient-to-r to-Gr-end from-Gr-start text-xs xl:text-lg px-1 xl:px-2 translate-x-1/3 -translate-y-1/3 " >2</p>
+            <p className="absolute right-0 top-0 rounded-full bg-gradient-to-r to-Gr-end from-Gr-start text-xs xl:text-lg px-1 xl:px-2 translate-x-1/3 -translate-y-1/3 ">
+              2
+            </p>
           </div>
           <div className="profile">
             <FaUserCircle />

@@ -26,11 +26,15 @@ const Li = ({ href, icon, isActive, onClick, className }) => {
   );
 };
 
-const Model = ({ isActive, onClick, text }) => {
+const Model = ({ onClick, text, isActive }) => {
   return (
     <li onClick={onClick}>
       <button
-        className={`font-openSans text-2xl text-white py-2.5 px-3  rounded-xl border duration-300 hover:bg-gradient-to-tr transition-all from-Gr-start to-Gr-end hover:border-transparent   ${isActive ? " bg-gradient-to-tr  border-transparent" : " bg-transparent  border-white  "}`}
+        className={`font-openSans text-sm xl:text-2xl text-white py-1.5 xl:py-2.5 px-2.5 xl:px-3 rounded-lg xl:rounded-xl border duration-300 hover:bg-gradient-to-tr transition-all from-Gr-start to-Gr-end hover:border-transparent text-nowrap ${
+          isActive
+            ? "bg-gradient-to-tr border-transparent"
+            : "bg-transparent border-white"
+        }`}
       >
         {text}
       </button>
@@ -40,13 +44,20 @@ const Model = ({ isActive, onClick, text }) => {
 
 const Category = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [activeModels, setActiveModels] = useState([]);;
+
   const handleClick = (index) => {
     setActiveIndex(index);
+    setActiveModels([]);
   };
 
-  let [active, setActive] = useState(null);
-  let handleVersion = (index) => {
-    setActive(index)
+  const handleModelClick = (index) => {
+    setActiveModels(
+      (prevState) =>
+        prevState.includes(index)
+          ? prevState.filter((i) => i !== index) 
+          : [...prevState, index] 
+    );
   };
 
   let links = [
@@ -55,10 +66,10 @@ const Category = () => {
       link: "/shop",
       vers: [
         { name: "PlayStation Network" },
-        { name: "PS5 " },
-        { name: "PS4 " },
-        { name: "PS3 " },
-        { name: "PSVR " },
+        { name: "PS5" },
+        { name: "PS4" },
+        { name: "PS3" },
+        { name: "PSVR" },
       ],
     },
     {
@@ -66,20 +77,19 @@ const Category = () => {
       link: "/shop",
       vers: [
         { name: "Xbox Live" },
-        { name: "Xbox Series X|S " },
-        { name: "Xbox One " },
-        { name: "Xbox 360 " },
-        { name: "Xbox " },
+        { name: "Xbox Series X|S" },
+        { name: "Xbox One" },
+        { name: "Xbox 360" },
+        { name: "Xbox" },
       ],
     },
     {
       icon: <BsNintendoSwitch />,
       link: "/shop",
       vers: [
-        { name: "Nintendo " },
-        { name: "Switch " },
+        { name: "Nintendo" },
+        { name: "Switch" },
         { name: "Switch Lite" },
-        { name: "Switch " },
         { name: "Nintendo Online Membership" },
       ],
     },
@@ -105,7 +115,6 @@ const Category = () => {
         { name: "VR Games" },
         { name: "VR Accessories" },
         { name: "VR Bundles" },
-        { name: "Compatible Platforms" },
       ],
     },
     {
@@ -116,7 +125,6 @@ const Category = () => {
         { name: "Controllers" },
         { name: "Keyboards" },
         { name: "Mice" },
-        { name: "Other Accessories" },
       ],
     },
     {
@@ -127,7 +135,6 @@ const Category = () => {
         { name: "Xbox Gift Cards" },
         { name: "Nintendo eShop Cards" },
         { name: "Steam Wallet Codes" },
-        { name: "Google Play & App Store" },
       ],
     },
     {
@@ -137,16 +144,14 @@ const Category = () => {
         { name: "Productivity Apps" },
         { name: "Entertainment Apps" },
         { name: "Educational Software" },
-        { name: "Utility Tools" },
-        { name: "Security Software" },
       ],
     },
   ];
 
   return (
     <div className="bg-primary-bg">
-      <Container>
-        <ul className="text-primary text-2xl  md:text-[43px] flex justify-between py-6 items-center overflow-x-auto scrollbar-hide gap-x-4 sm:gap-x-0 ">
+      <Container className="flex flex-col gap-y-3 sm:gap-y-4">
+        <ul className="text-primary text-2xl md:text-[43px] flex justify-between xl:py-6 items-center overflow-x-auto scrollbar-hide gap-x-4 sm:gap-x-0 ">
           {links.map((item, index) => (
             <Li
               key={index}
@@ -156,7 +161,7 @@ const Category = () => {
               onClick={() => handleClick(index)}
             />
           ))}
-          <div className=" hidden sm:flex w-0.5 h-11 bg-primary"></div>
+          <div className="hidden sm:flex w-0.5 h-11 bg-primary"></div>
           {links2.map((item, index) => (
             <Li
               key={index + links.length}
@@ -167,15 +172,13 @@ const Category = () => {
             />
           ))}
         </ul>
-
-        <ul className="versions flex gap-x-6">
-        {links[activeIndex]?.vers.map((versItem, index) => (
-            <Model
-              text={versItem.name}
-              isActive={active === index}
-              onClick={() => handleVersion(index)}
-            />
-          ))}
+        <ul className="versions flex gap-x-2 sm:gap-x-4 md:gap-x-6 overflow-x-auto scrollbar-hide w-full">
+          {activeIndex !== null &&
+            links
+              .concat(links2)
+              [
+                activeIndex
+              ]?.vers.map((versItem, index) => <Model key={index} text={versItem.name} isActive={activeModels.includes(index)} onClick={() => handleModelClick(index)} />)}
         </ul>
       </Container>
     </div>
