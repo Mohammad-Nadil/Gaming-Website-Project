@@ -1,6 +1,7 @@
 import React from "react";
 import { IoMdEye } from "react-icons/io";
 import { PiClockCountdownFill } from "react-icons/pi";
+import forza from '../../assets/forza.jpg'
 
 const ArticleCard = () => {
   return (
@@ -8,8 +9,8 @@ const ArticleCard = () => {
       <div className="img aspect-[373/297] w-[45.65%] rounded-lg lg:rounded-2xl xl:rounded-3xl overflow-hidden">
         <img
           className=" h-full w-full object-cover "
-          src="../../../public/forza.jpg"
-          alt=""
+          src={forza}
+          alt={forza}
         />
       </div>
       <div className="text w-1/2 flex flex-col gap-y-1.5 sm:gap-y-7 lg:gap-y-4 2xl:gap-y-7">
