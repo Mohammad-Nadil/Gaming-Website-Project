@@ -7,6 +7,7 @@ import { IoMdStar } from "react-icons/io";
 import badge from "../assets/offerBadge.png";
 import CustomBtn from "./layer/CustomBtn";
 import { BiCartAdd } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const OfferBadge = ({
   name,
@@ -85,12 +86,12 @@ const OfferBadge = ({
                   </div>
                 </div>
               </div>
-              <div className="btn xl:pt-3">
+              <Link to="productDetails" className="btn xl:pt-3">
                 <CustomBtn className="py-1.5 px-2 " href="/">
                   <BiCartAdd className=" text-base xl:text-[33px]" />
                   <p className=" text-sm xl:text-2xl">Buy Now</p>
                 </CustomBtn>
-              </div>
+              </Link >
             </div>
           </div>
         </div>

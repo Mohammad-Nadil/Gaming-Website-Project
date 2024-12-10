@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { BsNintendoSwitch } from "react-icons/bs";
 import { TbCircleKeyFilled } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({
   className,
@@ -33,9 +34,9 @@ const ProductCard = ({
   return (
     <div
       key={key}
-      className={`aspect-[398/520] p-0.5 bg-gradient-to-t from-Gr-start to-Gr-end rounded-xl sm:rounded-3xl group-[]: ${className}`}
+      className={`aspect-[398/500] p-0.5 bg-gradient-to-t from-Gr-start to-Gr-end rounded-xl sm:rounded-3xl group ${className}`}
     >
-      <div
+      <Link to="/productDetails"
         className={`bg-primary-bg w-full h-full rounded-xl sm:rounded-3xl ${Class} xl:flex xl:flex-col gap-y-5 xl:gap-y-0 `}
       >
         <div className="img aspect-[366/285]  w-full p-1 sm:p-4 relative ">
@@ -45,7 +46,11 @@ const ProductCard = ({
             alt={image}
           />
           <div
-            onClick={() => setLike(!like)}
+             onClick={(event) => {
+              event.preventDefault(); // Prevent Link navigation
+              event.stopPropagation(); // Prevent event bubbling
+              setLike(!like); // Toggle the like state
+            }}
             className={`fav absolute right-0 top-0 translate-y-1/2  -translate-x-1/2 p-1.5 sm:p-2.5 rounded-full bg-white/75 text-xs sm:text-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 ${
               like && "text-red-500"
             } `}
@@ -86,7 +91,7 @@ const ProductCard = ({
               </div>
             ) : (
               <div className="">
-                <p className="font-openSans text-sm sm:text-2xl sm:py-3 2xl:text-3xl text-[#E614FC]">
+                <p className="font-openSans text-xs sm:text-2xl sm:py-3 2xl:text-3xl text-[#E614FC]">
                   Release date 2024
                 </p>
               </div>
@@ -101,7 +106,7 @@ const ProductCard = ({
             {productKeyIcon && <TbCircleKeyFilled />}
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

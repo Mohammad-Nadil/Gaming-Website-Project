@@ -15,7 +15,7 @@ const Li = ({ href, icon, isActive, onClick, className }) => {
     >
       <Link to={href}>
         <p
-          className={`bg-gradient-to-bl hover:from-Gr-end hover:to-Gr-start rounded-lg p-3 hover:text-white !duration-300 border border-primary-bg !transition-all ${
+          className={`after:w-full after:h-full after:absolute relative after:top-0 after:left-0 overflow-hidden after:-z-10 z-10 after:opacity-0 hover:after:opacity-100 after:duration-300 after:bg-gradient-to-bl after:from-Gr-end after:to-Gr-start rounded-lg p-3 hover:text-white duration-300 border border-primary-bg !transition-all ${
             isActive ? "from-Gr-end to-Gr-start text-white" : ""
           }`}
         >
@@ -44,7 +44,7 @@ const Model = ({ onClick, text, isActive }) => {
 
 const Category = () => {
   const [activeIndex, setActiveIndex] = useState(null);
-  const [activeModels, setActiveModels] = useState([]);;
+  const [activeModels, setActiveModels] = useState([]);
 
   const handleClick = (index) => {
     setActiveIndex(index);
@@ -52,11 +52,10 @@ const Category = () => {
   };
 
   const handleModelClick = (index) => {
-    setActiveModels(
-      (prevState) =>
-        prevState.includes(index)
-          ? prevState.filter((i) => i !== index) 
-          : [...prevState, index] 
+    setActiveModels((prevState) =>
+      prevState.includes(index)
+        ? prevState.filter((i) => i !== index)
+        : [...prevState, index]
     );
   };
 
