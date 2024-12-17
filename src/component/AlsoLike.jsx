@@ -7,20 +7,20 @@ import AlsoLikeSlider from "./layer/AlsoLikeSlider";
 const AlsoLike = () => {
   return (
     <div>
-      <Container className=" px-0 2xl:px-4">
+      <Container className=" !px-0  2xl:!px-4">
         <div className="div h-full w-full bg-primary-bg rounded-3xl  py-8 xl:pt-14 xl:pb-9 flex flex-col gap-y-9">
           <div className="top text-white font-openSans flex justify-between items-center px-4 sm:px-8 xl:px-20">
             <div
               className="head flex items-center
                   gap-x-3 xl:gap-x-6"
             >
-              <div className="heading">
-                <p className=" sm:text-4xl text-nowrap lg:text-wrap xl:text-nowrap">
+              <div className="heading ">
+                <p className=" sm:text-4xl text-nowrap">
                 You May Also Like
                 </p>
               </div>
             </div>
-            <div className=" w-2/3  ">
+            <div className="w-dvw  ">
               <img className="w-full" src={line} alt={line} />
             </div>
 

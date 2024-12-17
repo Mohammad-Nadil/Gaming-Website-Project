@@ -230,7 +230,7 @@ const AlsoLikeSlider = () => {
     
       return (
         <div>
-          <Slider className="px-3" {...settings}>
+          <Slider className="px-0" {...settings}>
             <div className="!flex !flex-col xl:!flex-row    !h-full ">
               <ProductCard
                 name={items[0].name}
@@ -247,7 +247,6 @@ const AlsoLikeSlider = () => {
                 productKeyIcon={items[0].productKey}
                 available={items[0].available}
                 className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
-                Class=" !bg-[#1E2127] "
               />
               <ProductCard
                 name={items[1].name}
@@ -264,7 +263,6 @@ const AlsoLikeSlider = () => {
                 productKeyIcon={items[1].productKey}
                 available={items[1].available}
                 className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
-                Class=" !bg-[#1E2127]"
               />
             </div>
             <div className="!flex !flex-col xl:!flex-row    !h-full ">
@@ -300,7 +298,6 @@ const AlsoLikeSlider = () => {
                 productKeyIcon={items[3].productKey}
                 available={items[3].available}
                 className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
-                Class=" !bg-[#1E2127]"
               />
             </div>
             <div className="!flex !flex-col xl:!flex-row    !h-full ">
@@ -336,7 +333,6 @@ const AlsoLikeSlider = () => {
                 productKeyIcon={items[5].productKey}
                 available={items[5].available}
                 className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
-                Class=" !bg-[#1E2127]"
               />
             </div>
             <div className="!flex !flex-col xl:!flex-row    !h-full ">
@@ -372,7 +368,6 @@ const AlsoLikeSlider = () => {
                 productKeyIcon={items[7].productKey}
                 available={items[7].available}
                 className="mx-1.5 sm:mx-3 lg:mx-2 my-1 sm:my-3 xl:!w-1/2 "
-                Class=" !bg-[#1E2127]"
               />
             </div>
           </Slider>

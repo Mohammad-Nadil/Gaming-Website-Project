@@ -1,12 +1,12 @@
 import React from "react";
 import icon from "../../assets/star.svg";
 
-const ReviewCard = ({ image, name, star, review, className }) => {
+const ReviewCard = ({ image, name, star, review, className , Class }) => {
   return (
     <div
-      className={`p-[2px] mx-2  md:mx-5 bg-gradient-to-b from-Gr-start to-Gr-end rounded-lg  ${className}`}
+      className={`p-[2px] mx-2  md:mx-5 bg-gradient-to-b from-Gr-start to-Gr-end rounded-lg ${Class} `}
     >
-      <div className=" py-4 md:py-11 px-[1.125rem] md:px-12 bg-primary-bg rounded-lg flex flex-col gap-y-1.5 md:gap-y-6">
+      <div className={`py-4 md:py-11 px-[1.125rem] md:px-12 bg-primary-bg rounded-lg flex flex-col gap-y-1.5 md:gap-y-6 ${className}`}>
         <div className="detail flex items-center gap-x-3">
           <div className="image border border-primary rounded-full">
             <img

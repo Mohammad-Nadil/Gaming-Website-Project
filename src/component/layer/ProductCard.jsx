@@ -37,7 +37,7 @@ const ProductCard = ({
       className={`aspect-[398/500] p-0.5 bg-gradient-to-t from-Gr-start to-Gr-end rounded-xl sm:rounded-3xl group ${className}`}
     >
       <Link to="/productDetails"
-        className={`bg-primary-bg w-full h-full rounded-xl sm:rounded-3xl ${Class} xl:flex xl:flex-col gap-y-5 xl:gap-y-0 `}
+        className={`!bg-secondary-bg w-full h-full rounded-xl sm:rounded-3xl ${Class} xl:flex xl:flex-col gap-y-5 xl:gap-y-0 block  `}
       >
         <div className="img aspect-[366/285]  w-full p-1 sm:p-4 relative ">
           <img
@@ -47,9 +47,9 @@ const ProductCard = ({
           />
           <div
              onClick={(event) => {
-              event.preventDefault(); // Prevent Link navigation
-              event.stopPropagation(); // Prevent event bubbling
-              setLike(!like); // Toggle the like state
+              event.preventDefault();
+              event.stopPropagation(); 
+              setLike(!like); 
             }}
             className={`fav absolute right-0 top-0 translate-y-1/2  -translate-x-1/2 p-1.5 sm:p-2.5 rounded-full bg-white/75 text-xs sm:text-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 ${
               like && "text-red-500"
@@ -65,7 +65,7 @@ const ProductCard = ({
             <p>-{discountPercent}%</p>
           </div>
         </div>
-        <div className="info font-openSans flex flex-col items-center justify-between xl:justify-center  gap-y-1 sm:gap-y-3 xl:gap-y-  !w-full 2xl:gap-y-6 h-1/3 xl:h-auto overflow-hidden">
+        <div className="info font-openSans flex flex-col items-center justify-between xl:justify-center  gap-y-1 sm:gap-y-3 xl:gap-y-  !w-full 2xl:gap-y-6 h-1/3 xl:h-auto ">
           <div className="details text-sm sm:text-[28px] xl:text-2xl 2xl:text-3xl w-full flex  flex-col  sm:gap-y-3 lg:gap-y-2 px-2.5 sm:px-6 !h-2/3 ">
             <div className="name text-white  text-nowrap w-full ">
               {" "}

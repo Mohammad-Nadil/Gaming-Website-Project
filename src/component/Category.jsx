@@ -148,9 +148,9 @@ const Category = () => {
   ];
 
   return (
-    <div className="bg-primary-bg">
+    <div className="bg-primary-bg pt-6 xl:pt-12">
       <Container className="flex flex-col gap-y-3 sm:gap-y-4">
-        <ul className="text-primary text-2xl md:text-[43px] flex justify-between xl:py-6 items-center overflow-x-auto scrollbar-hide gap-x-4 sm:gap-x-0 ">
+        <ul className="text-primary text-2xl md:text-[43px] flex justify-between xl:py-6 items-center overflow-x-auto scrollbar-hide gap-x-4 sm:gap-x-0  ">
           {links.map((item, index) => (
             <Li
               key={index}
@@ -171,7 +171,7 @@ const Category = () => {
             />
           ))}
         </ul>
-        <ul className="versions flex gap-x-2 sm:gap-x-4 md:gap-x-6 overflow-x-auto scrollbar-hide w-full">
+        <ul className="versions flex gap-x-2 sm:gap-x-4 md:gap-x-6 overflow-x-auto scrollbar-hide w-full ">
           {activeIndex !== null &&
             links
               .concat(links2)

@@ -24,7 +24,7 @@ let Li = ({ name }) => {
 
 let Tags = ({ text }) => {
   return (
-    <li className=" py-2 xl:py-3 px-3 xl:px-5 rounded-lg bg-secondary-bg lg:text-base xl:text-xl  2xl:text-2xl text-white">
+    <li className=" p-1.5 sm:py-2 xl:py-3 sm:px-3 xl:px-5 rounded-lg bg-secondary-bg text-xs sm:text-2xl xl:text-xl  2xl:text-2xl text-white">
       <p>{text}</p>
     </li>
   );
@@ -101,7 +101,7 @@ const ProductDetails = () => {
       <Container>
         <Category />
       </Container>
-      <Container className="flex flex-col gap-y-44">
+      <Container className="flex flex-col gap-y-20 sm:gap-y-28 md:gap-y-32 lg:gap-y-40 xl:gap-y-44 ">
         <div className="main flex-col xl:flex-row flex gap-y-5 sm:gap-y-10 gap-x-5 2xl:gap-x-8">
           <div className=" xl:w-1/2 flex flex-col justify-between gap-y-2 sm:gap-y-5 xl:gap-y-0  ">
             <div className="img w-full h-[90%] rounded-2xl  sm:rounded-3xl overflow-hidden">
@@ -260,9 +260,9 @@ const ProductDetails = () => {
                   </div>
                 </div>
                 <div className="btn col-span-3 md:col-span-2 xl:col-span-3 2xl:col-span-2">
-                  <CustomBtn className="w-full sm:h-full items-center justify-center">
-                    <BiCartAdd className=" text-2xl sm:text-3xl xl:text-base xl:text-[33px]" />
-                    <p className="  sm:text-2xl xl:text-sm 2xl:text-2xl">
+                  <CustomBtn className="w-full sm:h-full items-center justify-center ">
+                    <BiCartAdd className=" text-2xl sm:text-3xl xl:text-2xl xl:text-[33px]" />
+                    <p className="  sm:text-2xl xl:text-x 2xl:text-2xl">
                       Buy Now
                     </p>
                   </CustomBtn>
@@ -275,12 +275,12 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-        
-        <div className="describe&seller flex flex-col lg:flex-row gap-x-8 font-openSans text-white ">
-          <div className="description flex flex-col gap-y-10 lg:w-1/2">
+
+        <div className="describe&seller flex flex-col-reverse items-center xl:flex-row gap-8 font-openSans text-white">
+          <div className="description flex flex-col gap-y-10 w-full xl:w-1/2">
             <div className="title flex flex-col gap-y-3.5">
-              <p className="text-3xl ">Description</p>
-              <p className="text-[1.375rem] text-primary ">
+              <p className="sm:text-3xl ">Description</p>
+              <p className=" text-sm sm:text-[1.375rem] sm:leading-8 text-primary ">
                 {item.description}
               </p>
               <a className="text-2xl underline text-Gr-end" href="#">
@@ -288,32 +288,36 @@ const ProductDetails = () => {
               </a>
             </div>
             <div className="hr w-full h-0.5 bg-primary/40"></div>
-            <div className="moreInfo flex flex-col gap-y-4">
+            <div className="moreInfo flex flex-col gap-y-2 sm:gap-y-4">
               <div className="release flex items-center gap-x-4">
-                <p className="text-2xl w-40">Release Date :</p>
+                <p className="text-xs sm:text-2xl w-20 sm:w-40">
+                  Release Date :
+                </p>
                 <ul className="flex gap-x-3">
                   <Tags text={item.releaseDate} />
                 </ul>
               </div>
               <div className="tags release flex items-center gap-x-4">
-                <p className="text-2xl w-40">Genre :</p>
-                <ul className="flex gap-x-3">
+                <p className="text-xs sm:text-2xl w-20 sm:w-40">Genre :</p>
+                <ul className="flex gap-x-1.5 sm:gap-x-3">
                   {item.tags.map((items, index) => (
                     <Tags text={items} />
                   ))}
                 </ul>
               </div>
               <div className="language release flex items-center gap-x-4">
-                <p className="text-2xl w-40">Language :</p>
-                <ul className="flex gap-x-3">
+                <p className="text-xs sm:text-2xl w-20 sm:w-40">Language :</p>
+                <ul className="flex gap-x-1.5 sm:gap-x-3">
                   {item.languages.map((items, index) => (
                     <Tags text={items} />
                   ))}
                 </ul>
               </div>
               <div className="playable release flex items-center gap-x-4">
-                <p className="text-2xl w-40">Playable on :</p>
-                <ul className="flex gap-x-3">
+                <p className="text-xs sm:text-2xl w-20 sm:w-40">
+                  Playable on :
+                </p>
+                <ul className="flex gap-x-1.5 sm:gap-x-3">
                   {item.platforms.map((items, index) => (
                     <Tags text={items} />
                   ))}
@@ -321,17 +325,44 @@ const ProductDetails = () => {
               </div>
             </div>
           </div>
-          <div className="seller lg:w-1/2 text-9xl grid place-content-center bg-secondary-bg rounded-3xl">
-          not done</div>
+          <div className="seller text-white font-openSans w-full xl:w-1/2  bg-secondary-bg rounded-3xl py-4 2xl:py-8 px-3 sm:px-6 2xl:px-11 flex flex-col gap-y-6">
+            <p className=" text-xl sm:text-3xl">Offers from other sellers</p>
+            <ul className="flex flex-col gap-y-2 sm:gap-y-5">
+              {[1, 2, 3, 4, 5, 6].map((index) => (
+                <li
+                  key={index}
+                  className=" text-xs sm:text-xl md:text-2xl  xl:text-base 2xl:text-2xl flex sm:gap-3 justify-between items-center "
+                >
+                  <div className="name text-black  bg-white p-2  sm:py-3 sm:px-5 rounded-lg w-1/4">
+                    <p>Sellername</p>
+                  </div>
+                  <div className="rating flex p-2 sm:py-4 sm:px-4 bg-primary-bg gap-1 rounded-lg">
+                    <div className="icon hidden sm:flex">
+                      <img className="" src={icon} alt={icon} />
+                    </div>
+                    <p className="">100% of 281 ratings</p>
+                  </div>
+                  <div className="price bg-primary-bg px-1 py-2 sm:py-4 sm:px-5 rounded-lg">
+                    <p>$59.99</p>
+                  </div>
+                  <div className="btn">
+                    <CustomBtn className=" py-2 px-2 md:px-6 md:py-3 ">
+                      <BiCartAdd className="  sm:text-3xl xl:text-2xl xl:text-[33px]" />
+                    </CustomBtn>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div className="media flex flex-col gap-y-9">
           <div className="head flex items-center gap-x-14">
-            <p className=" sm:text-4xl text-nowrap  text-white">
-              Game Media
-            </p>
-            <img className="w-full" src={line} alt={line} />
+            <p className=" sm:text-4xl text-nowrap  text-white">Game Media</p>
+            <div>
+              <img className="ma" src={line} alt={line} />
+            </div>
           </div>
-          <div className="main grid grid-cols-4 gap-x-5 xl:gap-x-7">
+          <div className="main grid grid-cols-2 grid-rows-2 lg:grid-rows-1 lg:grid-cols-4 gap-5 xl:gap-x-7">
             {item.images.gallery.map((items, index) => (
               <div className="aspect-[394/297]">
                 <img
@@ -350,9 +381,7 @@ const ProductDetails = () => {
                   gap-x-3 xl:gap-x-6"
             >
               <div className="heading">
-                <p className=" sm:text-4xl text-nowrap lg:text-wrap xl:text-nowrap">
-                  Product Reviews
-                </p>
+                <p className=" sm:text-4xl text-nowrap">Product Reviews</p>
               </div>
             </div>
             <div className=" w-2/3  ">
@@ -367,28 +396,34 @@ const ProductDetails = () => {
               />
             </div>
           </div>
-          <div className="review grid grid-cols-3">
+          <div className="review grid sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-3 gap-5">
             <ReviewCard
               image={example}
               name={item.reviews[0].reviewerName}
               star={item.reviews[0].rating}
               review={item.reviews[0].comment}
+              className=" md:py-6 md:px-5 bg-secondary-bg sm:bg-primary-bg"
+              Class=" mx-0 md:mx-0 bg-none sm:bg-gradient-to-t"
             />
             <ReviewCard
               image={example}
               name={item.reviews[0].reviewerName}
               star={item.reviews[0].rating}
               review={item.reviews[0].comment}
+              className=" md:py-6 md:px-5 bg-secondary-bg sm:bg-primary-bg"
+              Class=" mx-0 md:mx-0 bg-none sm:bg-gradient-to-t"
             />
             <ReviewCard
               image={example}
               name={item.reviews[0].reviewerName}
               star={item.reviews[0].rating}
               review={item.reviews[0].comment}
+              className=" md:py-6 md:px-5 bg-secondary-bg sm:bg-primary-bg"
+              Class=" mx-0 md:mx-0 bg-none sm:bg-gradient-to-t"
             />
           </div>
         </div>
-        <AlsoLike className />
+        <AlsoLike />
       </Container>
     </>
   );
