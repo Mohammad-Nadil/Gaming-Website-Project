@@ -5,7 +5,6 @@ import games from "../games";
 
 let items = games;
 
-console.log(length.games);
 
 function Items({ currentItems }) {
   return (

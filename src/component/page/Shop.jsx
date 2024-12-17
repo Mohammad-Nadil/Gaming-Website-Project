@@ -55,7 +55,7 @@ const Shop = () => {
             <PriceFilter />
             <SellerFilter />
           </div>
-          <div className={`main w-full lg:w-2/3 xl:w-3/4 grid grid-cols-2 xl:grid-cols-3 gap-y-4 sm:gap-y-9 md:gap-y-14 gap-x-3 sm:gap-x-5 md:gap-x-7 relative mb-20 after:w-screen after:h-[104%] after:absolute after:bg-black/80 after:z-40 after:left-1/2  after:-translate-x-1/2 after:duration-300 overflow-x-hidden ${showFilter?"after:opacity-100 ":"after:opacity-0"} scrollbar-hide `}>
+          <div className={`main w-full lg:w-2/3 xl:w-3/4 grid grid-cols-2 xl:grid-cols-3 gap-y-4 sm:gap-y-9 md:gap-y-14 gap-x-3 sm:gap-x-5 md:gap-x-7 relative mb-20 after:w-screen after:h-[104%] after:absolute after:bg-black/80 after:z-40 after:left-1/2  after:-translate-x-1/2 after:duration-300 overflow-x-hidden ${showFilter?"after:opacity-100 after:visible ":"after:opacity-0 after:invisible"} scrollbar-hide `}>
             <Paginate itemsPerPage={15} />
           </div>
         </div>

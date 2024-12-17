@@ -37,7 +37,7 @@ const ProductCard = ({
       className={`aspect-[398/500] p-0.5 bg-gradient-to-t from-Gr-start to-Gr-end rounded-xl sm:rounded-3xl group ${className}`}
     >
       <Link to="/productDetails"
-        className={`!bg-secondary-bg w-full h-full rounded-xl sm:rounded-3xl ${Class} xl:flex xl:flex-col gap-y-5 xl:gap-y-0 block  `}
+        className={`!bg-secondary-bg w-full h-full rounded-xl sm:rounded-3xl ${Class} xl:flex xl:flex-col gap-y-5 xl:gap-y-0 block   `}
       >
         <div className="img aspect-[366/285]  w-full p-1 sm:p-4 relative ">
           <img
