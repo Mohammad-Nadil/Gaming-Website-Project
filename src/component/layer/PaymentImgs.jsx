@@ -31,7 +31,7 @@ const PaymentImgs = ({ className }) => {
       {payOptions.map((item, index) => (
         <div className={` ${className}`}>
           <img
-            className="aspect-[63/43] w-10 lg:w-[63px] "
+            className={`aspect-[63/43] w-10 lg:w-[63px]`}
             src={item}
             alt={item}
           />
