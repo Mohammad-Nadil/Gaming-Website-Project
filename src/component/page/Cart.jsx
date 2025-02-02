@@ -6,6 +6,7 @@ import CustomBtn from "../layer/CustomBtn";
 import PaymentImgs from "../layer/PaymentImgs";
 import line from "../../assets/lineHorizontal.png";
 import CartCard from "../layer/CartCard";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   let item = [
@@ -109,9 +110,11 @@ const Cart = () => {
             <img className="w-full" src={line} alt={line} />
           </div>
           <div className="btn">
-            <button className=" text-xs sm:text-2xl border py-1.5 px-3 md:py-3 md:px-5 rounded-xl hover:scale-110 duration-300 text-nowrap">
-              Continue Shopping
-            </button>
+            <Link to="/shop">
+              <button className=" text-xs sm:text-2xl border py-1.5 px-3 md:py-3 md:px-5 rounded-xl hover:scale-110 duration-300 text-nowrap">
+                Continue Shopping
+              </button>
+            </Link>
           </div>
         </div>
         <div className="main flex flex-col xl:flex-row gap-x-3 gap-y-10 lg:gap-y-16 xl:gap-x-11  w-full ">
@@ -190,6 +193,7 @@ const Cart = () => {
                   <CustomBtn
                     text="Proceed to Checkout"
                     className="w-full grid place-items-center text-center  md:text-xl hover:scale-105"
+                    href="/checkout"
                   />
                 </div>
                 <div className="imgs flex flex-wrap justify-center gap-3 ">

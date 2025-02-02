@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 const Rootlayout = () => {
   return (
-    <div>
+    <div className='scrollbar-hide' >
       <Navbar/>
       <Outlet/>
       <Footer/>

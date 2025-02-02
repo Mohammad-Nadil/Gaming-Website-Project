@@ -68,8 +68,7 @@ const ProductCard = ({
         <div className="info font-openSans flex flex-col items-center justify-between xl:justify-center  gap-y-1 sm:gap-y-3 xl:gap-y-  !w-full 2xl:gap-y-6 h-1/3 xl:h-auto ">
           <div className="details text-sm sm:text-[28px] xl:text-2xl 2xl:text-3xl w-full flex  flex-col  sm:gap-y-3 lg:gap-y-2 px-2.5 sm:px-6 !h-2/3 ">
             <div className="name text-white  text-nowrap w-full ">
-              {" "}
-              {name.length > 18 ? name.substring(0, 18) + "..." : name}
+              {name.length > 15 ? name.substring(0, 15) + "..." : name}
             </div>
             {available ? (
               <div className="priceRating flex justify-between text-[11px] sm:text-2xl xl:text-xl 2xl:text-[28px] items-center">

@@ -11,6 +11,7 @@ import Home from "./component/page/Home";
 import Shop from "./component/page/Shop";
 import Cart from "./component/page/Cart";
 import ProductDetails from "./component/page/ProductDetails";
+import Checkout from "./component/page/Checkout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />}></Route>
       <Route path="/shop" element={<Shop/>}></Route>
       <Route path="/cart" element={<Cart/>}></Route>
+      <Route path="/checkout" element={<Checkout/>}></Route>
       <Route path="/productDetails" element={<ProductDetails/>}></Route>
     </Route>
   )

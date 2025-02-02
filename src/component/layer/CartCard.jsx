@@ -151,12 +151,12 @@ const CartCard = () => {
               {heart ? (
                 <FaHeart className="text-Gr-end" />
               ) : (
-                <FaRegHeart className="text-Gr-end" />
+                <FaRegHeart className="text-primary" />
               )}
             </button>
           </div>
           <div className="">
-            <button className="cross border border-primary rounded-3xl px-2.5 sm:px-5 py-3  sm:py-9 xl:py-7 2xl:py-12">
+            <button className="cross border border-primary rounded-3xl px-2.5 sm:px-5 py-3  sm:py-9 xl:py-7 2xl:py-12 text-primary">
               <ImCross />
             </button>
           </div>
