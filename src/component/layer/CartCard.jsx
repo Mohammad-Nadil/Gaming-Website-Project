@@ -63,7 +63,7 @@ const CartCard = () => {
     },
   ];
   return (
-    <div className="text-white font-openSans bg-gradient-to-r from-[#333333] to-[#16191D] flex  items-center lg:gap-x-11 rounded-md  sm:rounded-3xl p-1 py-3 sm:p-3 lg:p-0">
+    <div className="text-white font-openSans bg-gradient-to-r from-[#333333] to-[#16191D] flex  items-center lg:gap-x-11 rounded-md  sm:rounded-3xl p-1 py-3 sm:p-3 lg:p-0 ">
       <div className="left flex flex-col  gap-y-5 lg:flex-row gap-x-11 lg:items-center w-8/12 lg:w-auto">
         <div className="img lg:aspect-square sm:w-3/5 lg:w-1/3  2xl:w-4/12 group rounded-t-lg lg:rounded-l-3xl overflow-hidden ">
           <img
@@ -72,7 +72,7 @@ const CartCard = () => {
             alt={forza}
           />
         </div>
-        <div className="details flex flex-col gap-y-3 md:gap-y-5  ">
+        <div className="details flex flex-col gap-y-3 md:gap-y-5  pb-2">
           <div className="name&platforms  xl:text-2xl 2xl:text-3xl flex gap-3 sm:gap-5 items-center text-nowrap">
             <div className="name">{item[0].name}</div>
             <div className="platforms flex opacity-40 gap-3">
