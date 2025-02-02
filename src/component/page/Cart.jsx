@@ -5,30 +5,121 @@ import save from "../../assets/saveIcon.png";
 import CustomBtn from "../layer/CustomBtn";
 import PaymentImgs from "../layer/PaymentImgs";
 import line from "../../assets/lineHorizontal.png";
+import CartCard from "../layer/CartCard";
 
 const Cart = () => {
+  let item = [
+    {
+      name: "Forza Horizon 6",
+      description:
+        "An open-world racing game that lets players race across beautiful landscapes, from city streets to sprawling countryside.",
+      category: "Racing",
+      price: 55.99,
+      discount: true,
+      discountPercent: 25,
+      priceFrom: 40.99,
+      star: 5,
+      platforms: {
+        playstation: true,
+        xbox: true,
+        nintendo: true,
+        pc: true,
+      },
+      languages: ["English", "Spanish", "Italian", "German"],
+      releaseDate: "2024-10-01",
+      playableOn: ["Xbox Series X/S", "PC", "Nintendo Switch"],
+      editions: {
+        deluxe: 69.99,
+        complete: 89.99,
+        ultimate: 119.99,
+      },
+      productKey: true,
+      available: true,
+      stock: 200,
+      tags: ["racing", "open-world", "driving"],
+      brand: "Playground Games",
+      availabilityStatus: "In Stock",
+      reviews: [
+        {
+          rating: 5,
+          comment: "Best racing experience ever!",
+          date: "2024-11-23T14:00:00Z",
+          reviewerName: "Mark Davis",
+          reviewerEmail: "mark.davis@example.com",
+        },
+      ],
+      thumbnail: "/forza.jpg",
+      images: ["/forza1.jpg", "/forza2.jpg", "/forza3.jpg"],
+    },
+    {
+      name: "Ghostrunner",
+      description:
+        "A high-speed action game set in a cyberpunk world where players take on the role of a cybernetic ninja fighting through futuristic cityscapes.",
+      category: "Action",
+      price: 79.99,
+      discount: true,
+      discountPercent: 25,
+      priceFrom: 50,
+      star: 4,
+      platforms: {
+        playstation: true,
+        xbox: false,
+        nintendo: false,
+        pc: true,
+      },
+      languages: ["English", "Spanish", "French", "German"],
+      releaseDate: "2020-10-27",
+      playableOn: ["PS5", "PS4", "PC"],
+      editions: {
+        deluxe: 89.99,
+        complete: 109.99,
+        ultimate: 129.99,
+      },
+      productKey: false,
+      available: true,
+      stock: 150,
+      tags: ["cyberpunk", "action", "stealth"],
+      brand: "One More Level",
+      availabilityStatus: "In Stock",
+      reviews: [
+        {
+          rating: 4,
+          comment: "Fast-paced action and a unique setting.",
+          date: "2024-11-22T15:00:00Z",
+          reviewerName: "Chris Mendez",
+          reviewerEmail: "chris.mendez@example.com",
+        },
+      ],
+      thumbnail: "/ghostRunner.png",
+      images: ["/ghostRunner1.jpg", "/ghostRunner2.jpg", "/ghostRunner3.jpg"],
+    },
+  ];
+
   return (
     <div>
-      <Container className="flex flex-col gap-y-11 py-12">
+      <Container className="flex flex-col gap-y-6 md:gap-y-11 py-6 md:py-12">
         <div className="header font-openSans text-white flex items-center justify-between">
           <div className="name flex gap-x-2.5 items-center text-white">
-            <h2 className=" text-4xl">My cart</h2>
-            <p className=" text-2xl px-2.5 rounded-full bg-gradient-to-tr from-Gr-start to-Gr-end">
+            <h2 className=" sm:text-4xl text-nowrap">My cart</h2>
+            <p className=" text-sm sm:text-2xl px-1 sm:px-2.5 rounded-full bg-gradient-to-tr from-Gr-start to-Gr-end">
               2
             </p>
           </div>
-          <div className="line w-2/3 o">
+          <div className="line w-2/3 ">
             <img className="w-full" src={line} alt={line} />
           </div>
           <div className="btn">
-            <button className=" text-2xl border  py-3 px-5 rounded-xl hover:scale-110 duration-300">
+            <button className=" text-xs sm:text-2xl border py-1.5 px-3 md:py-3 md:px-5 rounded-xl hover:scale-110 duration-300 text-nowrap">
               Continue Shopping
             </button>
           </div>
         </div>
-        <div className="main flex gap-x-11 w-full ">
-          <div className="w-2/3  "></div>
-          <div className="w-1/3 flex flex-col gap-y-12 ">
+        <div className="main flex flex-col xl:flex-row gap-x-3 gap-y-10 lg:gap-y-16 xl:gap-x-11  w-full ">
+          <div className="xl:w-2/3 flex flex-col gap-y-10 lg:gap-y-16 ">
+            <CartCard />
+            <CartCard />
+          </div>
+          <div className="xl:w-1/3 flex flex-col gap-y-12 ">
             <div className="totalBill flex flex-col gap-y-9 bg-secondary-bg rounded-3xl py-7 px-8">
               <div className="price flex flex-col gap-y-7 text-white text-2xl">
                 <div className="item flex justify-between items-center">

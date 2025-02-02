@@ -55,12 +55,14 @@ const Navbar = () => {
           <div className="wishlist">
             <FaHeart />
           </div>
-          <div className="cart relative">
-            <HiShoppingBag />
-            <p className="absolute right-0 top-0 rounded-full bg-gradient-to-r to-Gr-end from-Gr-start text-xs xl:text-lg px-1 xl:px-2 translate-x-1/3 -translate-y-1/3 ">
-              2
-            </p>
-          </div>
+          <Link to="/cart" >
+            <div className="cart relative">
+              <HiShoppingBag />
+              <p className="absolute right-0 top-0 rounded-full bg-gradient-to-r to-Gr-end from-Gr-start text-xs xl:text-lg px-1 xl:px-2 translate-x-1/3 -translate-y-1/3 ">
+                2
+              </p>
+            </div>
+          </Link>
           <div className="profile">
             <FaUserCircle />
           </div>
