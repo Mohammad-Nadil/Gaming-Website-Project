@@ -32,7 +32,7 @@ const BlogNav = () => {
               <Link key={index} to={item.link}>
                 <li
                   onClick={() => manage(index)}
-                  className={` border  text-white py-1.5 2xl:py-3 px-3 2xl:px-4 rounded-lg text-xs sm:text-lg 2xl:text-2xl  ${active === index ? "bg-gradient-to-r from-Gr-start to-Gr-end border-primary-bg" : " bg-transparent border-white"} `}
+                  className={` border  text-white py-1.5 2xl:py-3 px-3 2xl:px-4 rounded-md sm:rounded-lg text-xs sm:text-lg 2xl:text-2xl  ${active === index ? "bg-gradient-to-r from-Gr-start to-Gr-end border-primary-bg" : " bg-transparent border-white"} `}
                 >
                   {item.name}
                 </li>
