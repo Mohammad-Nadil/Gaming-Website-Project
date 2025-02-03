@@ -1,15 +1,19 @@
-import React from 'react'
-import Container from '../layer/Container'
-import BlogNav from '../layer/BlogNav'
-import BannerBlog from '../BannerBlog'
+import React from "react";
+import BlogNav from "../layer/BlogNav";
+import BannerBlog from "../BannerBlog";
+import { Outlet, useLocation } from "react-router-dom";
 
 const BlogPage = () => {
-  return (
-    <div className='' >
-     <BlogNav/>
-     <BannerBlog/>
-    </div>
-  )
-}
+  const location = useLocation();
+  console.log("Current path:", location.pathname); // Debugging
 
-export default BlogPage
+  return (
+    <div>
+      <BlogNav />
+      <BannerBlog />
+      <Outlet  />
+    </div>
+  );
+};
+
+export default BlogPage;

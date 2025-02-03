@@ -13,17 +13,22 @@ import Cart from "./component/page/Cart";
 import ProductDetails from "./component/page/ProductDetails";
 import Checkout from "./component/page/Checkout";
 import BlogPage from "./component/page/BlogPage";
+import BlogPaginate from "./component/BlogPaginate";
+import BlogDetail from "./component/page/BlogDetail";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Rootlayout />}>
-      <Route index element={<Home />}></Route>
-      <Route path="/shop" element={<Shop/>}></Route>
-      <Route path="/cart" element={<Cart/>}></Route>
-      <Route path="/checkout" element={<Checkout/>}></Route>
-      <Route path="/productDetails" element={<ProductDetails/>}></Route>
-      <Route path="/blog" element={<BlogPage/>}></Route>
+    <Route index element={<Home />} />
+    <Route path="shop" element={<Shop />} />
+    <Route path="cart" element={<Cart />} />
+    <Route path="checkout" element={<Checkout />} />
+    <Route path="product-details" element={<ProductDetails />} /> {/* Fixed path */}
+    <Route path="blog" element={<BlogPage />}>
+      <Route index element={<BlogPaginate />} />
+      <Route path="article" element={<BlogDetail />} /> {/* Fixed child route */}
     </Route>
+  </Route>
   )
 );
 
