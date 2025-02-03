@@ -12,6 +12,7 @@ import Shop from "./component/page/Shop";
 import Cart from "./component/page/Cart";
 import ProductDetails from "./component/page/ProductDetails";
 import Checkout from "./component/page/Checkout";
+import BlogPage from "./component/page/BlogPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="/cart" element={<Cart/>}></Route>
       <Route path="/checkout" element={<Checkout/>}></Route>
       <Route path="/productDetails" element={<ProductDetails/>}></Route>
+      <Route path="/blog" element={<BlogPage/>}></Route>
     </Route>
   )
 );
