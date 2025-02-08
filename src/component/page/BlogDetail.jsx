@@ -146,63 +146,82 @@ const BlogDetail = () => {
               </div>
             </div>
           </div>
-          <div className="comment bg-secondary-bg rounded-lg md:rounded-3xl py-3 md:py-6 xl:py-12 px-3 md:px-7 xl:px-14 flex flex-col gap-y-5 md:gap-y-10">
-            <div className="head text-xl lg:text-4xl">
-              <p>Article Comments</p>
-            </div>
-            <div className="main">
-              <div className="form flex flex-col gap-y-5 md:gap-y-14">
-                <div className="inputs flex gap-x-4">
-                  <div className="name relative py-1 md:py-4 px-2 md:px-5 bg-primary-bg group w-full rounded-lg md:rounded-2xl">
-                    <input
-                      type="text"
-                      id="name"
-                      className="peer w-full bg-primary-bg outline-none rounded-lg p-2 pt-5 text-white"
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              alert("Your comment has been submitted! 🎉");
+            }}
+          >
+            <div className="comment bg-secondary-bg rounded-lg md:rounded-3xl py-3 md:py-6 xl:py-12 px-3 md:px-7 xl:px-14 flex flex-col gap-y-5 md:gap-y-10">
+              <div className="head text-xl lg:text-4xl">
+                <p>Article Comments</p>
+              </div>
+              <div className="main">
+                <div className="form flex flex-col gap-y-5 md:gap-y-14">
+                  <div className="inputs flex gap-x-4">
+                    {/* Name Input */}
+                    <div className="name relative py-1 md:py-4 px-2 md:px-5 bg-primary-bg group w-full rounded-lg md:rounded-2xl">
+                      <input
+                        type="text"
+                        id="name"
+                        className="peer w-full bg-primary-bg outline-none rounded-lg p-2 pt-5 text-white"
+                        required
+                      />
+                      <label
+                        htmlFor="name"
+                        className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 peer-valid:top-0 peer-valid:-translate-y-full peer-valid:text-Gr-start peer-focus:top-0 peer-focus:-translate-y-full peer-focus:text-Gr-start transition-all"
+                      >
+                        Name:
+                      </label>
+                    </div>
+
+                    {/* Email Input */}
+                    <div className="email relative py-1 md:py-4 px-2 md:px-5 bg-primary-bg group w-full rounded-lg md:rounded-2xl">
+                      <input
+                        type="email"
+                        id="email"
+                        className="peer w-full bg-primary-bg outline-none rounded-lg p-2 pt-5 text-white"
+                        required
+                      />
+                      <label
+                        htmlFor="email"
+                        className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 peer-valid:top-0 peer-valid:-translate-y-full peer-valid:text-Gr-start peer-focus:top-0 peer-focus:-translate-y-full peer-focus:text-Gr-start transition-all"
+                      >
+                        Email:
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Comment Input */}
+                  <div className="comment relative py-1 md:py-4 px-2 md:px-5 bg-primary-bg group w-full rounded-lg md:rounded-2xl">
+                    <textarea
+                      name="comment"
+                      id="comment"
+                      className="peer w-full bg-primary-bg outline-none rounded-lg p-2 text-white resize-none"
                       required
-                    />
+                      rows="5"
+                    ></textarea>
                     <label
-                      htmlFor="name"
-                      className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-0 peer-focus:-translate-y-full peer-focus:text-Gr-start transition-all"
+                      htmlFor="comment"
+                      className="absolute left-5 top-4 text-gray-400 peer-valid:top-0 peer-valid:-translate-y-full peer-valid:text-Gr-start peer-focus:top-0 peer-focus:-translate-y-full peer-focus:text-Gr-start transition-all"
                     >
-                      Name:
+                      Comment:
                     </label>
                   </div>
-                  <div className="email relative py-1 md:py-4 px-2 md:px-5 bg-primary-bg group w-full rounded-lg md:rounded-2xl">
-                    <input
-                      type="text"
-                      id="email"
-                      className="peer w-full bg-primary-bg outline-none rounded-lg p-2 pt-5 text-white"
-                      required
-                    />
-                    <label
-                      htmlFor="email"
-                      className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-0 peer-focus:-translate-y-full peer-focus:text-Gr-start transition-all"
+
+                  {/* Submit Button */}
+                  <div className="btn">
+                    <button
+                      type="submit"
+                      className="font-openSans text-sm md:text-2xl text-white rounded-lg flex gap-x-2.5 bg-gradient-to-tr from-Gr-start to-Gr-end py-1.5 px-2 md:py-3.5 md:px-4 hover:scale-110 duration-300"
                     >
-                      Email :
-                    </label>
+                      Publish
+                    </button>
                   </div>
-                </div>
-                <div className="comment relative py-1 md:py-4 px-2 md:px-5 bg-primary-bg group w-full rounded-lg md:rounded-2xl">
-                  <textarea
-                    name="comment"
-                    id="comment"
-                    className="peer w-full bg-primary-bg outline-none rounded-lg p-2 text-white resize-none"
-                    required
-                    rows="5"
-                  ></textarea>
-                  <label
-                    htmlFor="comment"
-                    className="absolute left-5 top-4 text-gray-400 peer-placeholder-shown:top-4 peer-focus:top-0 peer-focus:-translate-y-full peer-focus:text-Gr-start transition-all"
-                  >
-                    Comment:
-                  </label>
-                </div>
-                <div className="btn">
-                  <CustomBtn text="Publish" />
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
         <div className=" w-0 lg:w-1/3">
           <div className="tags bg-secondary-bg rounded-lg md:rounded-3xl py-6 2xl:py-9 md:px-7 2xl:px-10 hidden lg:flex flex-col gap-y-6">
@@ -212,7 +231,7 @@ const BlogDetail = () => {
             <div className="tag flex flex-wrap items-center gap-x-4 gap-y-6 ">
               {tags.map((tag, index) => (
                 <div key={index} className="">
-                  <p className="py-3 px-6 xl:text-xl text-white font-openSans bg-primary-bg rounded-lg">
+                  <p className="py-3 px-6 xl:text-xl text-white font-openSans bg-primary-bg rounded-lg cursor-pointer transition-all duration-300">
                     {tag}
                   </p>
                 </div>

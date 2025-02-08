@@ -2,9 +2,11 @@ import React from "react";
 import { IoMdEye } from "react-icons/io";
 import { PiClockCountdownFill } from "react-icons/pi";
 import forza from '../../assets/forza.jpg'
+import { Link } from "react-router-dom";
 
 const ArticleCard = () => {
   return (
+    <Link to="/blog" >
     <div className="font-openSans bg-secondary-bg rounded-xl lg:rounded-3xl xl:rounded-[33px] p-3 sm:p-5 lg:p-4 xl:p-5 2xl:py-7 2xl:px-6 flex gap-x-3 sm:gap-x-6 lg:gap-x-5 xl:gap-x-9 items-center">
       <div className="img aspect-[373/297] w-[45.65%] rounded-lg lg:rounded-2xl xl:rounded-3xl overflow-hidden">
         <img
@@ -31,7 +33,7 @@ const ArticleCard = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div></Link>
   );
 };
 
