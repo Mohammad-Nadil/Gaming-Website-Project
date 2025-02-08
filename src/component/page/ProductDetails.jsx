@@ -24,7 +24,7 @@ let Li = ({ name }) => {
 
 let Tags = ({ text }) => {
   return (
-    <li className=" p-1.5 sm:py-2 xl:py-3 sm:px-3 xl:px-5 rounded-lg bg-secondary-bg text-xs sm:text-2xl xl:text-xl  2xl:text-2xl text-white">
+    <li className="cursor-pointer p-1.5 sm:py-2 xl:py-3 sm:px-3 xl:px-5 rounded-lg bg-secondary-bg text-xs sm:text-2xl xl:text-xl  2xl:text-2xl text-white">
       <p>{text}</p>
     </li>
   );
