@@ -188,6 +188,7 @@ const WeeklyDeals = () => {
                 .filter((data, index) => index < show)
                 .map((item, index) => (
                   <ProductCard
+                  
                     key={index}
                     name={item.name}
                     image={item.image}
